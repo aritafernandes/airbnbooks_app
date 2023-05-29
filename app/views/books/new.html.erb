@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="w-60 my-5 d-flex justify-content-center">
+        <%= simple_form_for(@book) do |f| %>
+        <%= f.input :title %>
+        <%= f.input :details %>
+        <%= f.input :author %>
+        <%= f.input :year %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
