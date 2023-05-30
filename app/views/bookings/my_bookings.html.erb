@@ -1,0 +1,15 @@
+<div class="container">
+  <% @bookings.each do |booking|%>
+    <h2><%= booking.book.title %></h2>
+    <% if booking.pending? %>
+      <%= button_to "accept", booking_accept_path(booking), class: "btn btn-light" %>
+      <%= button_to "decline", booking_accept_path(booking), class: "btn btn-light" %>
+    <% end %>
+    <ul>
+      <li>Start date: <%= booking.start_date%></li>
+      <li>End date: <%= booking.end_date %></li>
+      <%= link_to "back to books", books_path, class: "btn btn-light" %>
+      <%= link_to "delete", booking_path(booking), class: "btn btn-light", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking from your list?" } %>
+    </ul>
+  <% end %>
+</div>
