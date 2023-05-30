@@ -6,8 +6,11 @@
         <%= f.input :details %>
         <%= f.input :author %>
         <%= f.input :year %>
+        <%= f.input :photo, as: :file %>
         <%= f.submit %>
+        <%= link_to "back to books", books_path, class: "btn btn-light" %>
       <% end %>
+
     </div>
   </div>
 </div>
