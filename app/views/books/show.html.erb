@@ -4,6 +4,9 @@
   <li><%= @book.details %></li>
   <li><%= @book.author %></li>
   <li><%= @book.year %></li>
-  <%= link_to "create booking", new_book_booking_path(@book), class: "btn btn-light" %>
+<div class="card-category"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @book.photo.key, height: 300, crop: :fill %>')">
+</div>  <%= link_to "create booking", new_book_booking_path(@book), class: "btn btn-light" %>
   <%= link_to "back to books", books_path, class: "btn btn-light" %>
 </ul>
+
