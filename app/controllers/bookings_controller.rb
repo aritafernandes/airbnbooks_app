@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
-  before_action :set_book, only: %i[new create destroy]
-  before_action :set_booking, only: %i[accept decline]
+  # is not necessary to find a book for the booking destroy action
+  # the booking destroys itself
+  before_action :set_book, only: %i[new create]
+  before_action :set_booking, only: %i[accept decline destroy]
 
   def new
     @booking = Booking.new
@@ -45,7 +47,8 @@ class BookingsController < ApplicationController
   end
 
   def set_booking
-    @booking = Booking.find(params[:booking_id])
+    # changed the params to params[:id], referencing itself
+    @booking = Booking.find(params[:id])
   end
 
   def booking_params
