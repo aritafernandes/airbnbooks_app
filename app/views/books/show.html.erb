@@ -1,23 +1,21 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 my-5 d-flex justify-content-center">
-      <div class="card" style="width: 30rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="text-center">
-          <h2><%= @book.title %></h2>
+<div class="container row mx-auto">
+  <div class="col-12 col-lg-10 mx-auto d-flex bg-white border-2 rounded-3 my-3">
+    <%= cl_image_tag @book.photo.key %>
+    <div class="p-4">
+      <div class="text-center">
+        <h2><%= @book.title %></h2>
+      </div>
+      <div class="card-body">
+        <ul class="card-text">
+        <div class="pb-3">
+          <p><%= @book.details %></p>
+          <p><%= @book.author %></p>
+          <p><%= @book.year %></p>
         </div>
-        <div class="card-body">
-          <ul class="card-text">
-          <div class="pb-3">
-            <p><%= @book.details %></p>
-            <p><%= @book.author %></p>
-            <p><%= @book.year %></p>
-          </div>
-          </ul>
-          <div class="d-flex justify-content-around">
-            <%= link_to "Create Booking", new_book_booking_path(@book), class: "btn btn-light" %>
-            <%= link_to "Back to Books", books_path, class: "btn btn-light" %>
-          </div>
+        </ul>
+        <div class="d-flex justify-content-around">
+          <%= link_to "Create Booking", new_book_booking_path(@book), class: "btn btn-light" %>
+          <%= link_to "Back to Books", books_path, class: "btn btn-light" %>
         </div>
       </div>
     </div>
