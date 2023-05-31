@@ -11,16 +11,16 @@
               <h2><%= booking.book.title %></h2>
             </div>
             <div class="d-flex justify-content-around">
-            <% if booking.pending? %>
-              <div>
-                <p>This booking is still pending</p>
-              </div>
-              <% else %>
-              <div>
-                <p>This booking was accepted</p>
-              </div>
+              <% if booking.pending? %>
+                <div>
+                  <p>This booking is still pending</p>
+                </div>
+                <% else %>
+                <div>
+                  <p>This booking was accepted</p>
+                </div>
+              <% end %>
             </div>
-            <% end %>
             <div class="d-flex justify-content-around p-4">
               <p>Start date: <%= booking.start_date%></p>
               <p>End date: <%= booking.end_date %></p>
