@@ -1,6 +1,8 @@
 <div class="container row mx-auto">
   <div class="col-12 col-lg-10 mx-auto d-flex bg-white border-2 rounded-3 my-3">
-    <%= cl_image_tag @book.photo.key %>
+    <div class= "book-image mt-4 rounded mx-auto d-block">
+    <%= cl_image_tag @book.photo.key%>
+    </div>
     <div class="p-4">
       <div class="text-center">
         <h2><%= @book.title %></h2>
@@ -8,14 +10,20 @@
       <div class="card-body">
         <ul class="card-text">
         <div class="pb-3">
-          <p><%= @book.details %></p>
-          <p><%= @book.author %></p>
-          <p><%= @book.year %></p>
+          <p> Details:
+          <%=@book.details %>
+          </p>
+          <p>Author:
+          <%= @book.author %>
+          </p>
+          <p> Year:
+          <%= @book.year %>
+          </p>
         </div>
         </ul>
-        <div class="d-flex justify-content-around">
-          <%= link_to "Create Booking", new_book_booking_path(@book), class: "btn btn-light" %>
-          <%= link_to "Back to Books", books_path, class: "btn btn-light" %>
+        <div class="d-flex justify-content-around pb-3">
+          <%= link_to "Create Booking", new_book_booking_path(@book), class: "button btn btn-light" %>
+          <%= link_to "Back to Books", books_path, class: "button btn btn-light" %>
         </div>
       </div>
     </div>

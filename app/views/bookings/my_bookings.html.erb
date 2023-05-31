@@ -12,8 +12,8 @@
             </div>
             <% if booking.pending? %>
               <div class="d-flex justify-content-around p-2">
-                <%= button_to "accept", booking_accept_path(booking), class: "btn btn-light" %>
-                <%= button_to "decline", booking_accept_path(booking), class: "btn btn-light" %>
+                <%= button_to "Accept", booking_accept_path(booking), class: "button btn btn-light" %>
+                <%= button_to "Decline", booking_accept_path(booking), class: "button btn btn-light" %>
               </div>
             <% end %>
             <div class="d-flex justify-content-around p-4">
@@ -21,8 +21,8 @@
               <p>End date: <%= booking.end_date %></p>
             </div>
             <div class="d-flex justify-content-around pb-3">
-              <%= link_to "back to books", books_path, class: "btn btn-light" %>
-              <%= link_to "delete", booking_path(booking), class: "btn btn-light", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking from your list?" } %>
+              <%= link_to "Back to Books", books_path, class: "button btn btn-light" %>
+              <%= link_to "Delete", booking_path(booking), class: "btn btn-ghost", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking from your list?" } %>
             </div>
           </div>
         <% end %>

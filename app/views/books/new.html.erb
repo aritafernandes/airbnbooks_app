@@ -11,9 +11,9 @@
         <%= f.input :author %>
         <%= f.input :year %>
         <%= f.input :photo, as: :file %>
-        <div class="button d-flex justify-content-around">
-          <%= f.submit %>
-          <%= link_to "back to books", books_path, class: "btn btn-light" %>
+        <div class="d-flex justify-content-around">
+          <%= f.submit class: "button btn btn-light"%>
+          <%= link_to "Back to Books", books_path, class: "button btn btn-light" %>
         </div>
         <% end %>
       </div>
