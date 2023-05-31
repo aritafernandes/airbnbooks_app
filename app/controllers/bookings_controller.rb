@@ -13,6 +13,11 @@ class BookingsController < ApplicationController
     @bookings_my_books = Booking.where(book: Book.where(user: current_user))
   end
 
+  def my_requests
+    @my_bookings = Booking.where(user: current_user)
+    @bookings_my_books = Booking.where(book: Book.where(user: current_user))
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @booking.book = @book
