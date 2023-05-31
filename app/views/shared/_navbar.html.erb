@@ -1,7 +1,7 @@
 <div class="navbar sticky-top navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to books_path, class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+      <%= image_tag "https://static.vecteezy.com/system/resources/previews/002/219/582/original/illustration-of-book-icon-free-vector.jpg" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,10 @@
             <%= link_to "Home", books_path, class: "nav-link" %>
           </li>
           <li class="nav-item active">
-            <%= link_to "My bookings", my_bookings_path, class: "nav-link" %>
+            <%= link_to "Bookings", my_bookings_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "Requests", my_requests_path, class: "nav-link me-3" %>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
