@@ -1,16 +1,22 @@
 <div class="container">
   <div class="row">
+      <div class="text-center pt-5">
+        <h2><strong>Create a book<strong></h2>
+      </div>
     <div class="w-60 my-5 d-flex justify-content-center">
+      <div class="card p-4">
         <%= simple_form_for(@book) do |f| %>
         <%= f.input :title %>
         <%= f.input :details %>
         <%= f.input :author %>
         <%= f.input :year %>
         <%= f.input :photo, as: :file %>
-        <%= f.submit %>
-        <%= link_to "back to books", books_path, class: "btn btn-light" %>
-      <% end %>
-
+        <div class="button d-flex justify-content-around">
+          <%= f.submit %>
+          <%= link_to "back to books", books_path, class: "btn btn-light" %>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
