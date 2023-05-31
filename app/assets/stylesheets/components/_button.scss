@@ -1,3 +1,15 @@
 .button {
-  border-radius: 5px;
+  border-radius: 50px;
+  background-color: #3F8363;
+  color: white;
+}
+
+.btn-ghost {
+  color: #f50c0c;
+  border: 1px solid #f50c0c;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
