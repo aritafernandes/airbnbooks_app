@@ -9,7 +9,8 @@ class BookingsController < ApplicationController
   end
 
   def my_bookings
-    @bookings = Booking.where(user: current_user)
+    @my_bookings = Booking.where(user: current_user)
+    @bookings_my_books = Booking.where(book: Book.where(user: current_user))
   end
 
   def create
@@ -47,8 +48,9 @@ class BookingsController < ApplicationController
   end
 
   def set_booking
-    # changed the params to params[:id], referencing itself
-    @booking = Booking.find(params[:id])
+    booking_id = params[:id] || params[:booking_id]
+
+    @booking = Booking.find(booking_id)
   end
 
   def booking_params

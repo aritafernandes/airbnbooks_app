@@ -12,7 +12,7 @@
         </div>
           <div class="d-flex justify-content-around">
             <%= link_to "book details", book_path(book), class: "button btn btn-light" %>
-            <%= link_to "delete", book_path(book), class: "button btn btn-light", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this book from your list?" } %>
+            <%= link_to "delete", book_path(book), class: "button btn btn-light", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this book from your list?" } if book.user == current_user %>
           </div>
         </div>
       <% end %>
