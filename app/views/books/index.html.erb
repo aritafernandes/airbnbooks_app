@@ -1,25 +1,25 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('/assets/banner_home.jpeg')">
+  <div class="container">
+    <h1><strong>AirbnBooks.</strong></h1>
+    <p>Book your next book for free.</p>
+  </div>
+</div>
+
 <div class="container">
-  <div class="row">
-    <div class="col6 mt-5 d-flex justify-content-center flex-flow-column">
-      <h1><strong>AirbnBooks.</strong></h1>
-    </div>
-    <div class="col6 mb-4 d-flex justify-content-center flex-flow-column">
-    <h1><strong>Book your next book for free.</strong></h1>
-    </div>
-  </div>
-  <div class="cards">
-      <% @books.each do |book| %>
-        <div class="card p-4 d-flex flex-column justify-content-between">
-        <div class="text-center">
-          <h3 class="pb-3"><%= book.title %></h3>
+  <div class="cards mt-5">
+    <% @books.each do |book| %>
+      <div class="card p-4 d-flex flex-column justify-content-between">
+      <div class="text-center">
+        <h3 class="pb-3"><%= book.title %></h3>
+      </div>
+        <div class="d-flex justify-content-around">
+          <%= link_to "Details", book_path(book), class: "button btn btn-light" %>
+          <%= link_to "Delete", book_path(book), class: "btn btn-ghost", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this book from your list?" } if book.user == current_user %>
         </div>
-          <div class="d-flex justify-content-around">
-            <%= link_to "Details", book_path(book), class: "button btn btn-light" %>
-            <%= link_to "Delete", book_path(book), class: "btn btn-ghost", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this book from your list?" } if book.user == current_user %>
-          </div>
-        </div>
-      <% end %>
+      </div>
+    <% end %>
   </div>
+
   <div class="my-5">
     <%= link_to "+ Add a Book", new_book_path, class: "button btn btn-light" %>
   </div>
