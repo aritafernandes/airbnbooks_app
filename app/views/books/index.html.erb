@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('/assets/banner_home.jpeg')">
   <div class="container">
     <div class="row">
-      <div class="col6 mt-5 d-flex justify-content-center flex-flow-column">
+      <div class="col6 mt-5 d-flex flex-column text-center">
         <h1><strong>AirbnBooks.</strong></h1>
         <p>Book your next book for free.</p>
       </div>
@@ -15,7 +15,7 @@
    </div>
    <div class="cards">
       <% @books.each do |book| %>
-      <div class="card mt-3 shadow p-4" style="width: 25rem;">
+      <div class="card mt-1 shadow p-4" style="width: 25rem;">
          <div class="d-flex flex-column align-items-center h-100">
             <% if book.photo.attached?%>
               <p class="card-image"><%= cl_image_tag book.photo.key, height: 200%></p>
@@ -31,8 +31,8 @@
             <% end %>
             </p>
             <div class="d-flex justify-content-around">
-               <%= link_to "Details", book_path(book), class: "button btn btn-light mb-3" %>
-               <%= link_to "Delete", book_path(book), class: "btn btn-ghost mb-3", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this book from your list?" } if book.user == current_user %>
+               <%= link_to "Details", book_path(book), class: "button btn btn-light mb-3 m-2" %>
+               <%= link_to "Delete", book_path(book), class: "btn btn-ghost mb-3 m-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this book from your list?" } if book.user == current_user %>
             </div>
          </div>
       </div>
