@@ -14,3 +14,16 @@
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
+
+.btn-flat {
+  color: rgb(162, 160, 160);
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: rgb(238, 231, 231);
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: rgb(238, 231, 231);
+  color: rgb(159, 157, 157);
+}

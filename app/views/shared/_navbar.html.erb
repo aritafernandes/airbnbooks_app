@@ -4,6 +4,17 @@
       <%= image_tag "open-book.png" %>
     <% end %>
 
+    <div class="container">
+      <%= form_with url: books_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search books"
+        %>
+        <%= submit_tag "Search", name: "", class: "btn btn-flat"%>
+      <% end %>
+    </div>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
