@@ -1,33 +1,49 @@
-<div class="container row mx-auto">
-   <div class="col-12 col-lg-10 mx-auto d-flex bg-white border-2 rounded-3 my-3 shadow">
+
+<div class="container d-flex flex-column">
+  <div class="row justify-content-center">
+    <div class="col-10 d-flex bg-white border-2 rounded-3 my-3">
       <div class= "book-image my-4 rounded mx-auto d-block">
-         <% if @book.photo.attached? %>
-         <%= cl_image_tag @book.photo.key, height: 300%>
-         <% end %>
+      <% if @book.photo.attached? %>
+        <%= cl_image_tag @book.photo.key %>
+      <% end %>
       </div>
       <div class="p-4">
-         <div class="text-center">
-            <h2><%= @book.title %></h2>
-         </div>
-         <div class="card-body">
-            <ul class="card-text">
-               <div class="pb-3">
-                  <p> Details:
-                     <%=@book.details %>
-                  </p>
-                  <p> Author:
-                     <%= @book.author %>
-                  </p>
-                  <p> Year:
-                     <%= @book.year %>
-                  </p>
-               </div>
-            </ul>
-            <div class="d-flex justify-content-around pb-3">
-               <%= link_to "Create Booking", new_book_booking_path(@book), class: "button btn btn-light" %>
-               <%= link_to "Back to Books", books_path, class: "button btn btn-light" %>
-            </div>
-         </div>
+        <div class="text-center">
+          <h2><%= @book.title %></h2>
+        </div>
+        <div class="card-body">
+          <ul class="card-text">
+          <div class="pb-3">
+            <p> Details:
+            <%=@book.details %>
+            </p>
+            <p>Author:
+            <%= @book.author %>
+            </p>
+            <p> Year:
+            <%= @book.year %>
+            </p>
+          </div>
+          </ul>
+          <div class="d-flex justify-content-end pb-3">
+            <%= link_to "Create Booking", new_book_booking_path(@book), class: "button btn btn-light" %>
+          </div>
+        </div>
       </div>
-   </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card col-10 mx-auto justify-content-center">
+      <div class="d-flex justify-content-between mx-5">
+        <h3 class="mt-4"><strong>Reviews</strong></h3>
+        <%= link_to "Add review", new_book_review_path(@book), class: "button btn btn-light my-3" %>
+      </div>
+        <ul class="list-group">
+          <% @book.reviews.each do |review| %>
+            <li class="list-group-item mb-3 border border-1"><%= review.content %></li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
 </div>
