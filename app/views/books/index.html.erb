@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col6 mt-5 d-flex flex-column text-center">
-        <h1><strong>AirbnBooks.</strong></h1>
+        <h1><strong>AirbnBooks</strong></h1>
         <p>Book your next book for free.</p>
       </div>
     </div>
@@ -20,7 +20,7 @@
             <% if book.photo.attached?%>
               <p class="card-image"><%= cl_image_tag book.photo.key, height: 200%></p>
               <p class="card-title ">
-                <strong><%= book.title %></strong>b
+                <strong><%= book.title %></strong>
               </p>
             <% end %>
             <p class="card-text flex-grow-1">
