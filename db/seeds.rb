@@ -19,3 +19,4 @@ puts "Destroying data..."
     book = Book.create!(user: user, title: Faker::Book.title, details: Faker::Lorem.paragraph, author: Faker::Book.author, year: year)
     puts "#{book.title} created!" if book.save
   end
+  
