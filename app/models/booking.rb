@@ -4,6 +4,9 @@ class Booking < ApplicationRecord
 
   validate :end_date_after_start_date
 
+  delegate :photo, to: :book
+  delegate :title, to: :book
+
   def end_date_after_start_date
     return if end_date > start_date
 
