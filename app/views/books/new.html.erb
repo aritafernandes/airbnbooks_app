@@ -7,7 +7,7 @@
          <div class="card p-4">
             <%= simple_form_for(@book) do |f| %>
             <%= f.input :title %>
-            <%= f.input :details %>
+            <%= f.input :details, placeholder: "Max 500 characters" %>
             <%= f.input :author %>
             <%= f.input :year %>
             <%= f.input :photo, as: :file %>

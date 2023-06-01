@@ -1,5 +1,5 @@
 <div class="container row mx-auto">
-   <div class="col-12 col-lg-10 mx-auto d-flex bg-white border-2 rounded-3 my-3">
+   <div class="col-12 col-lg-10 mx-auto d-flex bg-white border-2 rounded-3 my-3 shadow">
       <div class= "book-image my-4 rounded mx-auto d-block">
          <% if @book.photo.attached? %>
          <%= cl_image_tag @book.photo.key, height: 300%>
