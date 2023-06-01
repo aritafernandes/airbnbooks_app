@@ -8,18 +8,16 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
-  def my_bookings
-    @my_bookings = Booking.where(user: current_user)
-    @bookings_my_books = Booking.where(book: Book.where(user: current_user))
+  def my_listings
+    @my_listings = Booking.where(book: Book.where(user: current_user))
   end
 
-  def my_requests
+  def my_bookings
     @my_bookings = Booking.where(user: current_user)
-    @bookings_my_books = Booking.where(book: Book.where(user: current_user))
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new(listing_params)
     @booking.book = @book
     @booking.user = current_user
     @booking.status = :pending
@@ -33,17 +31,17 @@ class BookingsController < ApplicationController
 
   def accept
     @booking.accepted!
-    redirect_to my_bookings_path, status: :see_other
+    redirect_to my_listings_path, status: :see_other
   end
 
   def decline
     @booking.declined!
-    redirect_to my_bookings_path, status: :see_other
+    redirect_to my_listings_path, status: :see_other
   end
 
   def destroy
     @booking.destroy
-    redirect_to my_bookings_path, status: :see_other
+    redirect_to my_listings_path, status: :see_other
   end
 
   private
@@ -58,7 +56,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(booking_id)
   end
 
-  def booking_params
+  def listing_params
     params.require(:booking).permit(:start_date, :end_date)
   end
 end
