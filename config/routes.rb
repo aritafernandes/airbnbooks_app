@@ -11,6 +11,6 @@ Rails.application.routes.draw do
     post "decline", to: "bookings#decline"
   end
 
+  get "/my_listings", to: "bookings#my_listings"
   get "/my_bookings", to: "bookings#my_bookings"
-  get "/my_requests", to: "bookings#my_requests"
 end
