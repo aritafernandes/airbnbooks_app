@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('/assets/banner_home.jpg')">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/dhvsyhahj/image/upload/v1685650176/banner_cover.jpg');">
   <div class="container">
     <div class="row">
       <div class="col6 mt-5 d-flex flex-column text-center">
@@ -20,7 +20,7 @@
             <% if book.photo.attached?%>
               <p class="card-image"><%= cl_image_tag book.photo.key, height: 200%></p>
               <p class="card-title ">
-                <strong><%= book.title %></strong>
+                <strong><%= book.title %></strong>b
               </p>
             <% end %>
             <p class="card-text flex-grow-1">
