@@ -1,0 +1,14 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <h1 class="mt-5 text-center"><strong>Reviews</strong></h1>
+      <div class="my-5 justify-content-center">
+        <%= simple_form_for [@book, @review] do |f| %>
+          <%= f.input :content %>
+          <%= f.submit "Submit review" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
