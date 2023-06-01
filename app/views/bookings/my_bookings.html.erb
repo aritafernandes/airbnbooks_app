@@ -6,25 +6,25 @@
                <h2><strong>Bookings</strong></h2>
             </div>
             <% @my_bookings.each do |booking|%>
-            <div class="card shadow" style="width: 30rem;">
-               <div class="text-center p-3">
-                  <h2><%= booking.book.title %></h2>
-               </div>
-               <div class="justify-content-around text-center">
+              <div class="card shadow" style="width: 30rem;">
+                <div class="text-center p-3">
+                    <h2><%= booking.book.title %></h2>
+                </div>
+                <div class="justify-content-around text-center">
                   <% if booking.pending? %>
-                  <div>
-                     <p>This booking is still pending</p>
-                  </div>
+                    <div>
+                      <p>This booking is still pending</p>
+                    </div>
                   <% elsif booking.accepted? %>
-                  <div>
-                     <p>This booking was accepted</p>
-                  </div>
+                    <div>
+                      <p>This booking was accepted</p>
+                    </div>
                   <% else %>
-                  <div>
-                     <p>This booking was declined :(</p>
-                  </div>
-               </div>
-               <% end %>
+                    <div>
+                      <p>This booking was declined :(</p>
+                    </div>
+                  <% end %>
+                </div>
                <div class="d-flex justify-content-around p-4">
                   <p>Start date: <%= booking.start_date%></p>
                   <p>End date: <%= booking.end_date %></p>
