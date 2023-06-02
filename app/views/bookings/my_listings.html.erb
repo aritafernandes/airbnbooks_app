@@ -20,12 +20,14 @@
             <div class="text-center p-3">
               <h2><%= listing.title %></h2>
             </div>
-            <% if listing.pending? %>
-              <div class="d-flex justify-content-around p-2">
-                <%= button_to "accept", booking_accept_path(listing), class: "btn btn-light" %>
-                <%= button_to "decline", booking_decline_path(listing), class: "btn btn-light" %>
-              </div>
-            <% end %>
+            <div class="d-flex justify-content-center p-2">
+              <% if listing.pending? %>
+                <%= button_to "accept", booking_accept_path(listing), class: "mx-3 green btn btn-light" %>
+                <%= button_to "decline", booking_decline_path(listing), class: "red btn btn-light" %>
+              <% else %>
+                <p> You have <%= listing.status %>.</p>
+              <% end %>
+            </div>
             <div class="d-flex justify-content-around p-4">
               <p>Start date: <%= listing.start_date%></p>
               <p>End date: <%= listing.end_date %></p>
