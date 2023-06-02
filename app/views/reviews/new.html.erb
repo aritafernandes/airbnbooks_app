@@ -10,6 +10,7 @@
       <div class="my-5 justify-content-center">
         <%= simple_form_for [@book, @review] do |f| %>
           <%= f.input :content %>
+          <%= f.input :rating, collection: (1..5).to_a, label: 'Rate the book', input_html: {data: {controller: "star-rating"}} %>
           <%= f.submit "Submit review", class: "button btn btn-light" %>
         <% end %>
       </div>

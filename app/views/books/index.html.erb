@@ -9,13 +9,13 @@
   </div>
 </div>
 
-<div class="container">
-   <div class="d-flex justify-content-end my-3">
+<div class="container mt-5">
+   <div class="d-flex justify-content-end mb-4">
       <%= link_to "Add book", new_book_path, class: "button btn btn-light" %>
    </div>
    <div class="cards">
       <% @books.each do |book| %>
-      <div class="card mt-1 shadow p-4" style="width: 25rem;">
+      <div class="card mt-1 shadow p-4">
         <div class="d-flex flex-column align-items-center h-100">
           <% if book.user == current_user %>
             <div class="position-absolute top-0 start-0 m-4">
