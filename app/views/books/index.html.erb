@@ -25,7 +25,7 @@
             </div>
           <% end %>
           <% if book.photo.attached?%>
-            <p class="card-image"><%= cl_image_tag book.photo.key, height: 200%></p>
+            <%= cl_image_tag book.photo.key, height: 200, class: "shadow mb-3" %>
             <p class="card-title ">
              <strong><%= book.title %></strong>
             </p>
