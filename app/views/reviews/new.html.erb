@@ -1,4 +1,4 @@
-<div class="container justify-content-start mt-2 ">
+<div class="container justify-content-start mt-4 ">
   <%= link_to books_path do %>
     <i class="fa-solid fa-arrow-left-long fa-2xl" style="color: #333"></i>
   <% end %>
@@ -11,7 +11,7 @@
         <%= simple_form_for [@book, @review] do |f| %>
           <%= f.input :content %>
           <%= f.input :rating, collection: (1..5).to_a, label: 'Rate the book', input_html: {data: {controller: "star-rating"}} %>
-          <%= f.submit "Submit review" %>
+          <%= f.submit "Submit review", class: "button btn btn-light" %>
         <% end %>
       </div>
     </div>
