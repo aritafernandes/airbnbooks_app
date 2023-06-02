@@ -9,12 +9,14 @@
     <div class="col-10 d-flex bg-white border-2 rounded-3 my-3 shadow p-4">
       <div class= "book-image my-4 rounded mx-auto d-flex flex-column align-items-center">
         <% if @book.photo.attached? %>
-          <%= cl_image_tag @book.photo.key, height: 200%>
+          <%= cl_image_tag @book.photo.key, height: 300%>
           <div class="mt-3">
-            <% @avg_review_score.to_i.times do %>
-              <i class="star fa fa-star d-inline"></i>
+            <% if @reviews.any? %>
+              <% @avg_review_score.to_i.times do %>
+                <i class="star fa fa-star d-inline"></i>
+              <% end %>
+              (<%= @reviews.size %>)
             <% end %>
-            (<%= @book.reviews.size %>)
           </div>
         <% end %>
       </div>
@@ -51,7 +53,7 @@
         <%= link_to "Add review", new_book_review_path(@book), class: "button btn btn-light my-3" %>
       </div>
         <ul class="list-group">
-          <% @book.reviews.each do |review| %>
+          <% @reviews.each do |review| %>
             <li class="list-group-item mb-3 border border-1"><%= review.content %></li>
           <% end %>
         </ul>
