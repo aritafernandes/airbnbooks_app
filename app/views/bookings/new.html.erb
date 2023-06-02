@@ -3,14 +3,14 @@
       <div class="col-12 my-5 d-flex justify-content-center">
          <div class="w-60 my-5 d-flex justify-content-center flex-column">
             <div class="d-flex justify-content-center mb-3">
-               <h1>New Booking</h1>
+               <h1>Borrow Book</h1>
             </div>
             <div class="card p-3">
                <%= simple_form_for [@book, @booking] do |f| %>
                <%= f.input :start_date %>
                <%= f.input :end_date %>
                <div class="d-flex justify-content-around p-3">
-                  <%= f.submit class: "button btn btn-light"%>
+                  <%= f.submit "Borrow", class: "button btn btn-light"%>
                   <%= link_to "Back to Books", books_path, class: "button btn btn-light" %>
                </div>
                <% end %>
@@ -19,4 +19,3 @@
       </div>
    </div>
 </div>
-  
