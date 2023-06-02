@@ -16,26 +16,28 @@
    <div class="cards">
       <% @books.each do |book| %>
       <div class="card mt-1 shadow p-4" style="width: 25rem;">
-         <div class="d-flex flex-column align-items-center h-100">
-            <% if book.photo.attached?%>
-              <p class="card-image"><%= cl_image_tag book.photo.key, height: 200%></p>
-              <p class="card-title ">
-                <strong><%= book.title %></strong>
-              </p>
-            <% end %>
+        <div class="d-flex flex-column align-items-center h-100">
+          <div class="position-absolute top-0 start-0 m-4">
+            <%= link_to "🗑️", book_path(book), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this book from your list?" } if book.user == current_user %>
+          </div>
+          <% if book.photo.attached?%>
+            <p class="card-image"><%= cl_image_tag book.photo.key, height: 200%></p>
+            <p class="card-title ">
+             <strong><%= book.title %></strong>
+            </p>
+          <% end %>
             <p class="card-text flex-grow-1">
             <% if book.details.chars.count > 300 %>
               <%= book.details.first(300) + "..." %>
             <% else %>
-            <%= book.details %>
+              <%= book.details %>
             <% end %>
             </p>
             <div class="d-flex justify-content-around">
                <%= link_to "Details", book_path(book), class: "button btn btn-light mb-3 m-2" %>
-               <%= link_to "Delete", book_path(book), class: "btn btn-ghost mb-3 m-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this book from your list?" } if book.user == current_user %>
             </div>
-         </div>
+        </div>
       </div>
-      <% end %>
-   </div>
+    <% end %>
+  </div>
 </div>
