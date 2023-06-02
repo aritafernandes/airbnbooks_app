@@ -9,6 +9,7 @@ class BooksController < ApplicationController
   end
 
   def show
+    @reviews = @book.reviews
     @avg_review_score = avg_review_score
   end
 
