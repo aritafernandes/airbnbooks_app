@@ -8,7 +8,7 @@
       <div class="col-12 d-flex justify-content-center">
          <div class="cards mb-5 d-flex justify-content-center flex-column">
             <div class="text-center mt-5 mb-4">
-               <h2><strong>Bookings</strong></h2>
+               <h2><strong>Borrow Book</strong></h2>
             </div>
             <% @my_bookings.each do |booking|%>
               <div class="card shadow" style="width: 30rem;">
@@ -23,16 +23,16 @@
                 <div class="justify-content-around text-center">
                   <% if booking.pending? %>
                     <div>
-                      <p><strong>This booking is still pending 🤔</strong></p>
+                      <p><strong>...still pending 🤔</strong></p>
                     </div>
 
                   <% elsif booking.accepted? %>
                     <div>
-                      <p><strong>This booking was accepted! 🎉</strong></p>
+                      <p><strong>Yay! Accepted 🎉</strong></p>
                     </div>
                   <% else %>
                     <div>
-                      <p><strong>This booking was declined 😢</strong></p>
+                      <p><strong>Maybe next time 😢</strong></p>
                     </div>
                   <% end %>
                 </div>

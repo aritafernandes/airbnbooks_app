@@ -1,8 +1,8 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('/assets/banner_home.jpeg')">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/dhvsyhahj/image/upload/v1685650176/banner_cover.jpg');">
   <div class="container">
     <div class="row">
       <div class="col6 mt-5 d-flex flex-column text-center">
-        <h1><strong>AirbnBooks.</strong></h1>
+        <h1><strong>AirbnBooks</strong></h1>
         <p>Book your next book for free.</p>
       </div>
     </div>
@@ -10,11 +10,11 @@
 </div>
 
 <div class="container">
-  <div class="d-flex justify-content-end my-3">
-    <%= link_to "New book", new_book_path, class: "button btn btn-light" %>
-  </div>
-  <div class="cards">
-    <% @books.each do |book| %>
+   <div class="d-flex justify-content-end my-3">
+      <%= link_to "Add book", new_book_path, class: "button btn btn-light" %>
+   </div>
+   <div class="cards">
+      <% @books.each do |book| %>
       <div class="card mt-1 shadow p-4" style="width: 25rem;">
         <div class="d-flex flex-column align-items-center h-100">
           <div class="position-absolute top-0 start-0 m-4">

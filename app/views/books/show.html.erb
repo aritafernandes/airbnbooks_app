@@ -6,10 +6,10 @@
 </div>
 <div class="container d-flex flex-column">
   <div class="row justify-content-center">
-    <div class="col-10 d-flex bg-white border-2 rounded-3 my-3">
+    <div class="col-10 d-flex bg-white border-2 rounded-3 my-3 shadow p-4">
       <div class= "book-image my-4 rounded mx-auto d-block">
       <% if @book.photo.attached? %>
-        <%= cl_image_tag @book.photo.key %>
+        <%= cl_image_tag @book.photo.key, height: 200%>
       <% end %>
       </div>
       <div class="p-4">
@@ -22,7 +22,7 @@
             <p> Details:
             <%=@book.details %>
             </p>
-            <p>Author:
+            <p> Author:
             <%= @book.author %>
             </p>
             <p> Year:
@@ -31,7 +31,7 @@
           </div>
           </ul>
           <div class="d-flex justify-content-end pb-3">
-            <%= link_to "Create Booking", new_book_booking_path(@book), class: "button btn btn-light" %>
+            <%= link_to "Borrow", new_book_booking_path(@book), class: "button btn btn-light" %>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
   </div>
 
   <div class="row">
-    <div class="card col-10 mx-auto justify-content-center">
+    <div class="card col-10 mx-auto justify-content-center shadow p-4">
       <div class="d-flex justify-content-between mx-5">
         <h3 class="mt-4"><strong>Reviews</strong></h3>
         <%= link_to "Add review", new_book_review_path(@book), class: "button btn btn-light my-3" %>
