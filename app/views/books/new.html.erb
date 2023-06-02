@@ -1,3 +1,8 @@
+<div class="container justify-content-start mt-2 ">
+  <%= link_to books_path do %>
+    <i class="fa-solid fa-arrow-left-long fa-2xl" style="color: #333"></i>
+  <% end %>
+</div>
 <div class="container">
    <div class="row">
       <div class="text-center pt-5">
@@ -11,10 +16,6 @@
             <%= f.input :author %>
             <%= f.input :year %>
             <%= f.input :photo, as: :file %>
-            <div class="d-flex justify-content-around">
-               <%= f.submit class: "button btn btn-light"%>
-               <%= link_to "Back to Books", books_path, class: "button btn btn-light" %>
-            </div>
             <% end %>
          </div>
       </div>
